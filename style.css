@@ -1,0 +1,185 @@
+/* Reset some default styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Set up root variables for colors */
+:root {
+    --primary-color: #333333; /* Change this to your desired primary color */
+    --secondary-color: #ededed; /* Change this to your desired secondary color */
+}
+
+/* Apply styles to the entire page */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+.header {
+    padding: 30px 0;
+}
+
+.title {
+    text-align: center;
+    font-size: 80px;
+}
+
+/* Main Content Styles */
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 100px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 200px;
+}
+
+/* Button Styles */
+.common-button {
+    padding: 10px 20px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.common-button.active {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+/* Input Styles */
+input[type="color"] {
+    width: 80px;
+    height: 80px;
+    border: none;
+    -webkit-appearance: none;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* Slider Styles */
+input[type="range"] {
+    -webkit-appearance: none;
+    background-color: var(--secondary-color);
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    height: 10px;
+    border: 1px solid var(--primary-color);
+    border-radius: 25px;
+    background: var(--secondary-color);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 25px;
+    margin-top: -8px;
+    background: var(--primary-color);
+}
+
+/* Grid Styles */
+.grid {
+    display: grid;
+    width: 500px; /* Adjust the width of the grid container */
+    height: 500px; /* Adjust the height of the grid container */
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.grid-element {
+    user-select: none;
+}
+
+/* Footer Styles */
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.fa-github {
+    color: var(--primary-color);
+    font-size: 24px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.fa-github:hover {
+    transform: rotate(360deg) scale(1.2);
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+    .main {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 850px) {
+    .main {
+        gap: 50px;
+    }
+
+    .settings {
+        width: 150px;
+        gap: 16px;
+    }
+
+    .size-value {
+        margin-bottom: -4px;
+    }
+
+    .grid {
+        width: 400px; /* Adjust the width for smaller screens */
+        height: 400px; /* Adjust the height for smaller screens */
+    }
+}
+
+@media (max-width: 650px) {
+    .title {
+        font-size: 50px;
+    }
+
+    .main {
+        flex-direction: column-reverse;
+    }
+
+    .grid {
+        width: 300px; /* Adjust the width for even smaller screens */
+        height: 300px; /* Adjust the height for even smaller screens */
+    }
+}
